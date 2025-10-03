@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>享栄高等学校硬式野球部 OB・OG会 役員名簿</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', 'Yu Gothic', 'Meiryo', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23003d7a" width="1200" height="600"/><path fill="%23002855" d="M0 300L50 320L100 300L150 330L200 310L250 340L300 320L350 350L400 330L450 360L500 340L550 370L600 350L650 380L700 360L750 390L800 370L850 400L900 380L950 410L1000 390L1050 420L1100 400L1150 430L1200 410V600H0Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .school-name {
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            color: #ffd700;
+            font-weight: 300;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 2px;
+        }
+
+        .term {
+            font-size: 1.5rem;
+            color: #ffd700;
+            margin-top: 15px;
+            font-weight: 500;
+            letter-spacing: 4px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: -50px auto 0;
+            padding: 0 20px 80px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .intro-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .intro-card p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .officers-grid {
+            display: grid;
+            gap: 30px;
+        }
+
+        .position-section {
+            background: white;
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .position-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .position-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #003d7a;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #ffd700;
+            display: inline-block;
+        }
+
+        .officer-card {
+            display: grid;
+            grid-template-columns: 120px 120px 1fr;
+            gap: 20px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+            border-radius: 10px;
+            margin-bottom: 15px;
+            align-items: center;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .officer-card:hover {
+            background: linear-gradient(135deg, #e8f4f8 0%, #fff 100%);
+            border-left-color: #003d7a;
+            transform: translateX(5px);
+        }
+
+        .officer-card.new-member {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff 100%);
+            border-left-color: #ffd700;
+        }
+
+        .position-label {
+            font-weight: 700;
+            color: #003d7a;
+            font-size: 1.1rem;
+        }
+
+        .graduation-year {
+            color: #666;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .officer-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .new-badge {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            color: #003d7a;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .legend {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 40px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .legend-content {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .term {
+                font-size: 1.2rem;
+            }
+
+            .officer-card {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .position-section {
+                padding: 25px 20px;
+            }
+
+            .intro-card {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            .school-name {
+                font-size: 1rem;
+            }
+
+            .officer-name {
+                font-size: 1.1rem;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <div class="school-name">享栄高等学校硬式野球部</div>
+            <h1>OB・OG会 役員名簿</h1>
+            <div class="term">令和7・8年度</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="intro-card">
+            <p>享栄高等学校硬式野球部OB・OG会の令和7・8年度役員名簿をご案内いたします。<br>
+            各役職者の卒業年と共に、現体制をご確認ください。</p>
+        </div>
+
+        <div class="officers-grid">
+            <!-- 名誉顧問・顧問 -->
+            <div class="position-section">
+                <div class="position-title">名誉顧問・顧問</div>
+                <div class="officer-card new-member">
+                    <div class="position-label">名誉顧問</div>
+                    <div class="graduation-year">昭和35年</div>
+                    <div class="officer-name">
+                        柴垣 旭延
+                        <span class="new-badge">新任</span>
+                    </div>
+                </div>
+                <div class="officer-card">
+                    <div class="position-label">顧問</div>
+                    <div class="graduation-year">昭和36年</div>
+                    <div class="officer-name">岩月 宏之</div>
+                </div>
+            </div>
+
+            <!-- 役員 -->
+            <div class="position-section">
+                <div class="position-title">役員</div>
+                <div class="officer-card">
+                    <div class="position-label">役員</div>
+                    <div class="graduation-year">昭和59年</div>
+                    <div class="officer-name">鈴木 勝雄</div>
+                </div>
+                <div class="officer-card">
+                    <div class="position-label">役員</div>
+                    <div class="graduation-year">昭和63年</div>
+                    <div class="officer-name">冨田 勝也</div>
+                </div>
+                <div class="officer-card">
+                    <div class="position-label">役員</div>
+                    <div class="graduation-year">平成5年</div>
+                    <div class="officer-name">梶野 宗司</div>
+                </div>
+            </div>
+
+            <!-- 会長・副会長 -->
+            <div class="position-section">
+                <div class="position-title">会長・副会長</div>
+                <div class="officer-card">
+                    <div class="position-label">会長</div>
+                    <div class="graduation-year">昭和58年</div>
+                    <div class="officer-name">彦坂 明人</div>
+                </div>
+                <div class="officer-card">
+                    <div class="position-label">副会長</div>
+                    <div class="graduation-year">昭和51年</div>
+                    <div class="officer-name">野入 利秋</div>
+                </div>
+                <div class="officer-card">
+                    <div class="position-label">副会長</div>
+                    <div class="graduation-year">平成9年</div>
+                    <div class="officer-name">塚本 真吾</div>
+                </div>
+                <div class="officer-card new-member">
+                    <div class="position-label">副会長</div>
+                    <div class="graduation-year">平成17年</div>
+                    <div class="officer-name">
+                        小林 賢吉
+                        <span class="new-badge">新任</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 幹事 -->
+            <div class="position-section">
+                <div class="position-title">幹事</div>
+                <div class="officer-card">
+                    <div class="position-label">幹事</div>
+                    <div class="graduation-year">昭和60年</div>
+                    <div class="officer-name">田辺 嗣章</div>
+                </div>
+                <div class="officer-card">
+                    <div class="position-label">幹事</div>
+                    <div class="graduation-year">平成5年</div>
+                    <div class="officer-name">畑佐 仁史</div>
+                </div>
+                <div class="officer-card">
+                    <div class="position-label">幹事</div>
+                    <div class="graduation-year">平成6年</div>
+                    <div class="officer-name">附柴 康孝</div>
+                </div>
+                <div class="officer-card new-member">
+                    <div class="position-label">幹事</div>
+                    <div class="graduation-year">平成10年</div>
+                    <div class="officer-name">
+                        磯村 拓馬
+                        <span class="new-badge">新任</span>
+                    </div>
+                </div>
+                <div class="officer-card new-member">
+                    <div class="position-label">幹事</div>
+                    <div class="graduation-year">平成10年</div>
+                    <div class="officer-name">
+                        梶野 俊宏
+                        <span class="new-badge">新任</span>
+                    </div>
+                </div>
+                <div class="officer-card new-member">
+                    <div class="position-label">幹事</div>
+                    <div class="graduation-year">平成11年</div>
+                    <div class="officer-name">
+                        川口 浩規
+                        <span class="new-badge">新任</span>
+                    </div>
+                </div>
+                <div class="officer-card">
+                    <div class="position-label">幹事</div>
+                    <div class="graduation-year">平成15年</div>
+                    <div class="officer-name">上野 文也</div>
+                </div>
+                <div class="officer-card new-member">
+                    <div class="position-label">幹事</div>
+                    <div class="graduation-year">平成27年</div>
+                    <div class="officer-name">
+                        川口 彩実
+                        <span class="new-badge">新任</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 事務局 -->
+            <div class="position-section">
+                <div class="position-title">事務局</div>
+                <div class="officer-card">
+                    <div class="position-label">部長</div>
+                    <div class="graduation-year">-</div>
+                    <div class="officer-name">日野 隆徳</div>
+                </div>
+                <div class="officer-card">
+                    <div class="position-label">事務補佐</div>
+                    <div class="graduation-year">平成15年</div>
+                    <div class="officer-name">上野 文也</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="legend">
+            <div class="legend-content">
+                <span class="new-badge">新任</span>
+                <span>= 役職変更・新任者</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
