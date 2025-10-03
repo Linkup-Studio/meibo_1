@@ -239,7 +239,8 @@
 
         @media (max-width: 768px) {
             h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
+                letter-spacing: -1px;
             }
 
             .term {
@@ -247,11 +248,42 @@
                 letter-spacing: 4px;
             }
 
+            .school-name {
+                font-size: 0.85rem;
+                letter-spacing: 6px;
+            }
+
+            .hero {
+                min-height: 60vh;
+                padding: 40px 0;
+            }
+
+            .hero-content {
+                padding: 0 20px;
+            }
+
             .officer-card {
                 grid-template-columns: 1fr;
-                gap: 12px;
-                text-align: center;
-                padding: 20px;
+                gap: 10px;
+                padding: 20px 18px;
+            }
+
+            .position-label {
+                font-size: 0.9rem;
+                color: #c29858;
+                font-weight: 600;
+            }
+
+            .graduation-year {
+                font-size: 0.85rem;
+                color: #888;
+                order: 3;
+            }
+
+            .officer-name {
+                font-size: 1.25rem;
+                order: 2;
+                justify-content: flex-start;
             }
 
             .position-section {
@@ -262,31 +294,87 @@
                 padding: 35px 25px;
             }
 
-            .officer-name {
-                justify-content: center;
+            .intro-card p {
+                font-size: 1rem;
+                line-height: 1.8;
             }
 
             .container {
-                padding: 60px 20px 80px;
+                padding: 50px 20px 80px;
+            }
+
+            .position-title {
+                font-size: 1.4rem;
+                margin-bottom: 25px;
             }
         }
 
         @media (max-width: 480px) {
             h1 {
-                font-size: 1.8rem;
+                font-size: 2rem;
+                letter-spacing: -0.5px;
             }
 
             .school-name {
-                font-size: 0.75rem;
-                letter-spacing: 4px;
+                font-size: 0.7rem;
+                letter-spacing: 3px;
             }
 
-            .officer-name {
-                font-size: 1.15rem;
+            .term {
+                font-size: 1rem;
+                letter-spacing: 3px;
             }
 
             .hero {
-                min-height: 60vh;
+                min-height: 50vh;
+            }
+
+            .officer-name {
+                font-size: 1.2rem;
+            }
+
+            .position-section {
+                padding: 25px 16px;
+            }
+
+            .intro-card {
+                padding: 30px 20px;
+            }
+
+            .intro-card p {
+                font-size: 0.95rem;
+            }
+
+            .officer-card {
+                padding: 18px 15px;
+            }
+
+            .new-badge {
+                padding: 4px 10px;
+                font-size: 0.65rem;
+            }
+
+            .container {
+                padding: 40px 15px 60px;
+            }
+
+            .officers-grid {
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 375px) {
+            h1 {
+                font-size: 1.7rem;
+            }
+
+            .officer-name {
+                font-size: 1.1rem;
+                flex-wrap: wrap;
+            }
+
+            .position-title {
+                font-size: 1.2rem;
             }
         }
     </style>
