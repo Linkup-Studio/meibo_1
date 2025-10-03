@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>享栄高等学校硬式野球部 OB・OG会 役員名簿</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap');
+
         * {
             margin: 0;
             padding: 0;
@@ -12,224 +14,279 @@
         }
 
         body {
-            font-family: 'Noto Sans JP', 'Yu Gothic', 'Meiryo', sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: #333;
+            font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0a0a0a;
+            color: #e0e0e0;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23003d7a" width="1200" height="600"/><path fill="%23002855" d="M0 300L50 320L100 300L150 330L200 310L250 340L300 320L350 350L400 330L450 360L500 340L550 370L600 350L650 380L700 360L750 390L800 370L850 400L900 380L950 410L1000 390L1050 420L1100 400L1150 430L1200 410V600H0Z"/></svg>');
-            background-size: cover;
-            background-position: center;
-            padding: 80px 20px;
-            text-align: center;
-            color: white;
             position: relative;
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
             overflow: hidden;
         }
 
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(194, 152, 88, 0.03) 0%, transparent 70%);
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
             left: 0;
             right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(194, 152, 88, 0.5), transparent);
         }
 
         .hero-content {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
+            padding: 0 30px;
             position: relative;
             z-index: 1;
+            text-align: center;
         }
 
         .school-name {
-            font-size: 1.2rem;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
-            color: #ffd700;
+            font-size: 0.9rem;
+            letter-spacing: 8px;
+            margin-bottom: 25px;
+            color: #c29858;
             font-weight: 300;
+            text-transform: uppercase;
+            opacity: 0.9;
         }
 
         h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            letter-spacing: 2px;
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #ffffff 0%, #c29858 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -2px;
+            line-height: 1.1;
         }
 
         .term {
-            font-size: 1.5rem;
-            color: #ffd700;
-            margin-top: 15px;
-            font-weight: 500;
-            letter-spacing: 4px;
+            font-size: 1.3rem;
+            color: #c29858;
+            font-weight: 300;
+            letter-spacing: 6px;
+            margin-top: 20px;
         }
 
         .container {
-            max-width: 1200px;
-            margin: -50px auto 0;
-            padding: 0 20px 80px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 30px 100px;
             position: relative;
-            z-index: 2;
         }
 
         .intro-card {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            margin-bottom: 60px;
+            background: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(194, 152, 88, 0.2);
+            border-radius: 16px;
+            padding: 50px;
+            margin-bottom: 80px;
             text-align: center;
         }
 
         .intro-card p {
             font-size: 1.1rem;
-            color: #555;
-            line-height: 1.8;
+            color: #b0b0b0;
+            line-height: 2;
+            font-weight: 300;
         }
 
         .officers-grid {
             display: grid;
-            gap: 30px;
+            gap: 40px;
         }
 
         .position-section {
-            background: white;
-            border-radius: 15px;
-            padding: 35px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: rgba(20, 20, 20, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(194, 152, 88, 0.15);
+            border-radius: 12px;
+            padding: 45px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .position-section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+            border-color: rgba(194, 152, 88, 0.4);
+            box-shadow: 0 20px 60px rgba(194, 152, 88, 0.1);
         }
 
         .position-title {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 700;
-            color: #003d7a;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #ffd700;
-            display: inline-block;
+            color: #c29858;
+            margin-bottom: 35px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(194, 152, 88, 0.2);
+            letter-spacing: 2px;
         }
 
         .officer-card {
             display: grid;
-            grid-template-columns: 120px 120px 1fr;
-            gap: 20px;
-            padding: 20px;
-            background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
-            border-radius: 10px;
-            margin-bottom: 15px;
+            grid-template-columns: 140px 140px 1fr;
+            gap: 25px;
+            padding: 24px 28px;
+            background: rgba(30, 30, 30, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            margin-bottom: 16px;
             align-items: center;
-            transition: all 0.3s ease;
-            border-left: 4px solid transparent;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .officer-card:hover {
-            background: linear-gradient(135deg, #e8f4f8 0%, #fff 100%);
-            border-left-color: #003d7a;
-            transform: translateX(5px);
+            background: rgba(40, 40, 40, 0.6);
+            border-color: rgba(194, 152, 88, 0.3);
+            transform: translateX(8px);
         }
 
         .officer-card.new-member {
-            background: linear-gradient(135deg, #fff9e6 0%, #fff 100%);
-            border-left-color: #ffd700;
+            background: rgba(194, 152, 88, 0.08);
+            border-color: rgba(194, 152, 88, 0.25);
+        }
+
+        .officer-card.new-member:hover {
+            background: rgba(194, 152, 88, 0.12);
+            border-color: rgba(194, 152, 88, 0.5);
         }
 
         .position-label {
-            font-weight: 700;
-            color: #003d7a;
-            font-size: 1.1rem;
+            font-weight: 500;
+            color: #999;
+            font-size: 1rem;
+            letter-spacing: 1px;
         }
 
         .graduation-year {
             color: #666;
-            font-size: 1rem;
-            font-weight: 500;
+            font-size: 0.95rem;
+            font-weight: 400;
+            font-family: 'Courier New', monospace;
         }
 
         .officer-name {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 700;
-            color: #1a1a2e;
+            color: #ffffff;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            letter-spacing: 0.5px;
         }
 
         .new-badge {
-            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
-            color: #003d7a;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
+            background: linear-gradient(135deg, #c29858 0%, #a67c4a 100%);
+            color: #0a0a0a;
+            padding: 5px 14px;
+            border-radius: 4px;
+            font-size: 0.7rem;
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
         }
 
         .legend {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            margin-top: 40px;
+            background: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(194, 152, 88, 0.2);
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 60px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
         .legend-content {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             font-size: 1rem;
-            color: #666;
+            color: #999;
+        }
+
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 3rem;
+            }
         }
 
         @media (max-width: 768px) {
             h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
 
             .term {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
+                letter-spacing: 4px;
             }
 
             .officer-card {
                 grid-template-columns: 1fr;
-                gap: 10px;
+                gap: 12px;
                 text-align: center;
+                padding: 20px;
             }
 
             .position-section {
-                padding: 25px 20px;
+                padding: 30px 20px;
             }
 
             .intro-card {
-                padding: 30px 20px;
+                padding: 35px 25px;
+            }
+
+            .officer-name {
+                justify-content: center;
+            }
+
+            .container {
+                padding: 60px 20px 80px;
             }
         }
 
         @media (max-width: 480px) {
             h1 {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
             }
 
             .school-name {
-                font-size: 1rem;
+                font-size: 0.75rem;
+                letter-spacing: 4px;
             }
 
             .officer-name {
-                font-size: 1.1rem;
-                justify-content: center;
+                font-size: 1.15rem;
+            }
+
+            .hero {
+                min-height: 60vh;
             }
         }
     </style>
