@@ -4,261 +4,495 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>享栄高等学校硬式野球部 OB・OG会 役員名簿</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --navy: #0b1f3a;
+            --navy-deep: #071527;
+            --navy-bright: #1e4d8c;
+            --white: #ffffff;
+            --off-white: #f5f7fa;
+            --text: #16233a;
+            --text-sub: #5a6572;
+            --line: #dce3ec;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Noto Sans JP', 'Yu Gothic', 'Meiryo', sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: #333;
+            font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--white);
+            color: var(--text);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
+        .en {
+            font-family: 'Oswald', 'Noto Sans JP', sans-serif;
+        }
+
+        /* ========== ヒーロー ========== */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23003d7a" width="1200" height="600"/><path fill="%23002855" d="M0 300L50 320L100 300L150 330L200 310L250 340L300 320L350 350L400 330L450 360L500 340L550 370L600 350L650 380L700 360L750 390L800 370L850 400L900 380L950 410L1000 390L1050 420L1100 400L1150 430L1200 410V600H0Z"/></svg>');
-            background-size: cover;
-            background-position: center;
-            padding: 80px 20px;
-            text-align: center;
-            color: white;
             position: relative;
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             overflow: hidden;
+            background: var(--navy-deep);
         }
 
-        .hero::before {
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('./koshien-hero.jpg') center 62% / cover no-repeat;
+        }
+
+        .hero-bg::after {
             content: '';
             position: absolute;
-            top: 0;
+            inset: 0;
+            background:
+                linear-gradient(180deg,
+                    rgba(7, 21, 39, 0.55) 0%,
+                    rgba(11, 31, 58, 0.35) 40%,
+                    rgba(7, 21, 39, 0.82) 100%);
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: var(--white);
+            padding: 100px 24px 140px;
+            max-width: 1000px;
+        }
+
+        .hero-kicker {
+            font-size: 0.85rem;
+            letter-spacing: 0.45em;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.85);
+            text-transform: uppercase;
+            margin-bottom: 22px;
+        }
+
+        .hero-school {
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.35em;
+            color: var(--white);
+            margin-bottom: 30px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.6rem, 7vw, 5rem);
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            line-height: 1.15;
+            text-shadow: 0 4px 30px rgba(7, 21, 39, 0.6);
+            margin-bottom: 34px;
+        }
+
+        .hero h1 .thin {
+            display: block;
+            font-size: 0.42em;
+            font-weight: 700;
+            letter-spacing: 0.4em;
+            margin-bottom: 18px;
+            color: rgba(255, 255, 255, 0.92);
+        }
+
+        .hero-term {
+            display: inline-block;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            padding: 10px 36px;
+            font-size: 1.05rem;
+            font-weight: 500;
+            letter-spacing: 0.4em;
+            text-indent: 0.4em;
+            background: rgba(7, 21, 39, 0.35);
+            backdrop-filter: blur(4px);
+        }
+
+        /* 下端の斜めカット */
+        .hero-cut {
+            position: absolute;
+            bottom: -1px;
             left: 0;
             right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+            z-index: 3;
+            display: block;
+            width: 100%;
+            height: 70px;
         }
 
-        .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .school-name {
-            font-size: 1.2rem;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
-            color: #ffd700;
-            font-weight: 300;
-        }
-
-        h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            letter-spacing: 2px;
-        }
-
-        .term {
-            font-size: 1.5rem;
-            color: #ffd700;
-            margin-top: 15px;
-            font-weight: 500;
-            letter-spacing: 4px;
+        /* ========== 本文 ========== */
+        .page-body {
+            background:
+                linear-gradient(180deg, var(--white) 0%, var(--off-white) 100%);
         }
 
         .container {
-            max-width: 1200px;
-            margin: -50px auto 0;
-            padding: 0 20px 80px;
-            position: relative;
-            z-index: 2;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 40px 24px 90px;
         }
 
-        .intro-card {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            margin-bottom: 60px;
+        .intro {
             text-align: center;
+            padding: 24px 0 60px;
         }
 
-        .intro-card p {
-            font-size: 1.1rem;
-            color: #555;
-            line-height: 1.8;
+        .intro p {
+            font-size: 1.02rem;
+            color: var(--text-sub);
+            line-height: 2.1;
         }
 
-        .officers-grid {
-            display: grid;
-            gap: 30px;
-        }
-
+        /* セクション */
         .position-section {
-            background: white;
-            border-radius: 15px;
-            padding: 35px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-top: 4px solid var(--navy);
+            box-shadow: 0 14px 40px rgba(11, 31, 58, 0.07);
+            padding: 44px 48px 30px;
+            margin-bottom: 46px;
         }
 
-        .position-section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        .section-head {
+            display: flex;
+            align-items: baseline;
+            gap: 18px;
+            border-bottom: 2px solid var(--navy);
+            padding-bottom: 16px;
+            margin-bottom: 10px;
         }
 
-        .position-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #003d7a;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #ffd700;
-            display: inline-block;
+        .section-en {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.3em;
+            color: var(--navy-bright);
+            text-transform: uppercase;
         }
 
+        .section-head h2 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--navy);
+            letter-spacing: 0.08em;
+        }
+
+        /* 役員1行 */
         .officer-card {
             display: grid;
-            grid-template-columns: 120px 120px 1fr;
-            gap: 20px;
-            padding: 20px;
-            background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
-            border-radius: 10px;
-            margin-bottom: 15px;
+            grid-template-columns: 130px 120px 1fr;
+            gap: 24px;
             align-items: center;
-            transition: all 0.3s ease;
-            border-left: 4px solid transparent;
+            padding: 20px 8px;
+            border-bottom: 1px solid var(--line);
+            position: relative;
+            transition: background 0.25s ease;
+        }
+
+        .officer-card:last-child {
+            border-bottom: none;
+        }
+
+        .officer-card::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 14px;
+            bottom: 14px;
+            width: 3px;
+            background: var(--navy);
+            opacity: 0;
+            transition: opacity 0.25s ease;
         }
 
         .officer-card:hover {
-            background: linear-gradient(135deg, #e8f4f8 0%, #fff 100%);
-            border-left-color: #003d7a;
-            transform: translateX(5px);
+            background: #f2f6fb;
         }
 
-        .officer-card.new-member {
-            background: linear-gradient(135deg, #fff9e6 0%, #fff 100%);
-            border-left-color: #ffd700;
+        .officer-card:hover::before {
+            opacity: 1;
         }
 
         .position-label {
+            font-size: 0.92rem;
             font-weight: 700;
-            color: #003d7a;
-            font-size: 1.1rem;
+            color: var(--navy);
+            letter-spacing: 0.15em;
         }
 
         .graduation-year {
-            color: #666;
-            font-size: 1rem;
-            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            letter-spacing: 0.05em;
         }
 
         .officer-name {
-            font-size: 1.2rem;
+            font-size: 1.32rem;
             font-weight: 700;
-            color: #1a1a2e;
+            color: var(--text);
+            letter-spacing: 0.12em;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 14px;
+            flex-wrap: wrap;
         }
 
         .new-badge {
-            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
-            color: #003d7a;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
+            display: inline-block;
+            background: var(--navy);
+            color: var(--white);
+            font-size: 0.68rem;
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: 0.25em;
+            text-indent: 0.25em;
+            padding: 5px 12px;
+            transform: skewX(-10deg);
         }
 
+        .new-badge span {
+            display: inline-block;
+            transform: skewX(10deg);
+        }
+
+        /* 凡例 */
         .legend {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            margin-top: 40px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 6px 0 20px;
+            color: var(--text-sub);
+            font-size: 0.95rem;
         }
 
-        .legend-content {
-            display: inline-flex;
+        .legend .new-badge {
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        /* ========== 写真バンド ========== */
+        .photo-band {
+            position: relative;
+            min-height: 340px;
+            display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 1rem;
-            color: #666;
+            justify-content: center;
+            overflow: hidden;
+            background: var(--navy-deep);
         }
 
+        .photo-band .band-bg {
+            position: absolute;
+            inset: 0;
+            background: url('./koshien-hero.jpg') center 30% / cover no-repeat;
+        }
+
+        .photo-band .band-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(7, 21, 39, 0.85) 0%, rgba(11, 31, 58, 0.45) 55%, rgba(7, 21, 39, 0.65) 100%);
+        }
+
+        .band-inner {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: var(--white);
+            padding: 70px 24px;
+        }
+
+        .band-inner .en {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.45em;
+            color: rgba(255, 255, 255, 0.75);
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .band-inner p {
+            font-size: clamp(1.4rem, 4vw, 2rem);
+            font-weight: 900;
+            letter-spacing: 0.25em;
+            text-shadow: 0 2px 20px rgba(7, 21, 39, 0.7);
+        }
+
+        /* ========== フッター ========== */
+        footer {
+            background: var(--navy-deep);
+            color: rgba(255, 255, 255, 0.85);
+            text-align: center;
+            padding: 44px 24px;
+        }
+
+        footer .footer-title {
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            margin-bottom: 12px;
+            color: var(--white);
+        }
+
+        footer p {
+            font-size: 0.82rem;
+            letter-spacing: 0.08em;
+            opacity: 0.7;
+        }
+
+        /* ========== レスポンシブ ========== */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
+            .hero {
+                min-height: 78vh;
             }
 
-            .term {
-                font-size: 1.2rem;
+            .hero-inner {
+                padding: 80px 20px 110px;
+            }
+
+            .hero-kicker {
+                font-size: 0.68rem;
+                letter-spacing: 0.35em;
+            }
+
+            .hero-school {
+                font-size: 0.95rem;
+                letter-spacing: 0.25em;
+            }
+
+            .hero-term {
+                font-size: 0.92rem;
+                padding: 9px 26px;
+            }
+
+            .hero-cut {
+                height: 40px;
+            }
+
+            .container {
+                padding: 24px 16px 60px;
+            }
+
+            .intro {
+                padding: 16px 0 44px;
+            }
+
+            .intro p {
+                font-size: 0.92rem;
+                line-height: 1.9;
+            }
+
+            .position-section {
+                padding: 30px 22px 18px;
+                margin-bottom: 32px;
+            }
+
+            .section-head {
+                flex-direction: column;
+                gap: 6px;
+                align-items: flex-start;
+            }
+
+            .section-head h2 {
+                font-size: 1.3rem;
             }
 
             .officer-card {
                 grid-template-columns: 1fr;
-                gap: 10px;
-                text-align: center;
+                gap: 6px;
+                padding: 18px 10px;
             }
 
-            .position-section {
-                padding: 25px 20px;
+            .officer-card::before {
+                left: 0;
             }
 
-            .intro-card {
-                padding: 30px 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.6rem;
-            }
-
-            .school-name {
-                font-size: 1rem;
+            .position-label {
+                font-size: 0.82rem;
+                color: var(--navy-bright);
             }
 
             .officer-name {
-                font-size: 1.1rem;
-                justify-content: center;
+                font-size: 1.22rem;
+                order: 2;
+            }
+
+            .graduation-year {
+                font-size: 0.82rem;
+                order: 3;
+            }
+
+            .photo-band {
+                min-height: 260px;
             }
         }
-    </style>
+
+        @media (max-width: 400px) {
+            .hero h1 {
+                letter-spacing: 0.03em;
+            }
+
+            .officer-name {
+                font-size: 1.12rem;
+            }
+
+            .position-section {
+                padding: 26px 16px 14px;
+            }
+        }
+
+</style>
 </head>
 <body>
-    <div class="hero">
-        <div class="hero-content">
-            <div class="school-name">享栄高等学校硬式野球部</div>
-            <h1>OB・OG会 役員名簿</h1>
-            <div class="term">令和7・8年度</div>
+    <!-- ヒーロー -->
+    <header class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-inner">
+            <p class="hero-kicker en">Kyoei High School Baseball Club</p>
+            <p class="hero-school">享栄高等学校硬式野球部</p>
+            <h1><span class="thin">OB・OG会</span>役員名簿</h1>
+            <div class="hero-term">令和7・8年度</div>
         </div>
-    </div>
+        <svg class="hero-cut" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true">
+            <polygon points="0,10 100,0 100,10" fill="#ffffff"></polygon>
+        </svg>
+    </header>
 
-    <div class="container">
-        <div class="intro-card">
-            <p>享栄高等学校硬式野球部OB・OG会の令和7・8年度役員名簿をご案内いたします。<br>
-            各役職者の卒業年と共に、現体制をご確認ください。</p>
-        </div>
+    <div class="page-body">
+        <div class="container">
+            <div class="intro">
+                <p>享栄高等学校硬式野球部OB・OG会の令和7・8年度役員名簿をご案内いたします。<br>
+                各役職者の卒業年と共に、現体制をご確認ください。</p>
+            </div>
 
-        <div class="officers-grid">
             <!-- 名誉顧問・顧問 -->
-            <div class="position-section">
-                <div class="position-title">名誉顧問・顧問</div>
+            <section class="position-section">
+                <div class="section-head">
+                    <span class="section-en">Advisors</span>
+                    <h2>名誉顧問・顧問</h2>
+                </div>
                 <div class="officer-card new-member">
                     <div class="position-label">名誉顧問</div>
                     <div class="graduation-year">昭和35年</div>
                     <div class="officer-name">
                         柴垣 旭延
-                        <span class="new-badge">新任</span>
+                        <span class="new-badge"><span>新任</span></span>
                     </div>
                 </div>
                 <div class="officer-card">
@@ -266,11 +500,22 @@
                     <div class="graduation-year">昭和36年</div>
                     <div class="officer-name">岩月 宏之</div>
                 </div>
-            </div>
+                <div class="officer-card new-member">
+                    <div class="position-label">顧問</div>
+                    <div class="graduation-year">昭和58年</div>
+                    <div class="officer-name">
+                        彦坂 明人
+                        <span class="new-badge"><span>新任</span></span>
+                    </div>
+                </div>
+            </section>
 
             <!-- 役員 -->
-            <div class="position-section">
-                <div class="position-title">役員</div>
+            <section class="position-section">
+                <div class="section-head">
+                    <span class="section-en">Board Members</span>
+                    <h2>役員</h2>
+                </div>
                 <div class="officer-card">
                     <div class="position-label">役員</div>
                     <div class="graduation-year">昭和59年</div>
@@ -281,44 +526,51 @@
                     <div class="graduation-year">昭和63年</div>
                     <div class="officer-name">冨田 勝也</div>
                 </div>
-                <div class="officer-card">
-                    <div class="position-label">役員</div>
-                    <div class="graduation-year">平成5年</div>
-                    <div class="officer-name">梶野 宗司</div>
-                </div>
-            </div>
+            </section>
 
             <!-- 会長・副会長 -->
-            <div class="position-section">
-                <div class="position-title">会長・副会長</div>
-                <div class="officer-card">
+            <section class="position-section">
+                <div class="section-head">
+                    <span class="section-en">President &amp; Vice Presidents</span>
+                    <h2>会長・副会長</h2>
+                </div>
+                <div class="officer-card new-member">
                     <div class="position-label">会長</div>
-                    <div class="graduation-year">昭和58年</div>
-                    <div class="officer-name">彦坂 明人</div>
+                    <div class="graduation-year">平成5年</div>
+                    <div class="officer-name">
+                        梶野 宗司
+                        <span class="new-badge"><span>新任</span></span>
+                    </div>
                 </div>
                 <div class="officer-card">
                     <div class="position-label">副会長</div>
                     <div class="graduation-year">昭和51年</div>
                     <div class="officer-name">野入 利秋</div>
                 </div>
-                <div class="officer-card">
+                <div class="officer-card new-member">
                     <div class="position-label">副会長</div>
                     <div class="graduation-year">平成9年</div>
-                    <div class="officer-name">塚本 真吾</div>
+                    <div class="officer-name">
+                        塚本 真吾
+                        <span class="new-badge"><span>新任</span></span>
+                    </div>
                 </div>
                 <div class="officer-card new-member">
                     <div class="position-label">副会長</div>
                     <div class="graduation-year">平成17年</div>
                     <div class="officer-name">
                         小林 賢吉
-                        <span class="new-badge">新任</span>
+                        <span class="new-badge"><span>新任</span></span>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- 幹事 -->
-            <div class="position-section">
-                <div class="position-title">幹事</div>
+            <section class="position-section">
+                <div class="section-head">
+                    <span class="section-en">Secretaries</span>
+                    <h2>幹事</h2>
+                </div>
                 <div class="officer-card">
                     <div class="position-label">幹事</div>
                     <div class="graduation-year">昭和60年</div>
@@ -339,7 +591,7 @@
                     <div class="graduation-year">平成10年</div>
                     <div class="officer-name">
                         磯村 拓馬
-                        <span class="new-badge">新任</span>
+                        <span class="new-badge"><span>新任</span></span>
                     </div>
                 </div>
                 <div class="officer-card new-member">
@@ -347,7 +599,7 @@
                     <div class="graduation-year">平成10年</div>
                     <div class="officer-name">
                         梶野 俊宏
-                        <span class="new-badge">新任</span>
+                        <span class="new-badge"><span>新任</span></span>
                     </div>
                 </div>
                 <div class="officer-card new-member">
@@ -355,7 +607,7 @@
                     <div class="graduation-year">平成11年</div>
                     <div class="officer-name">
                         川口 浩規
-                        <span class="new-badge">新任</span>
+                        <span class="new-badge"><span>新任</span></span>
                     </div>
                 </div>
                 <div class="officer-card">
@@ -368,14 +620,17 @@
                     <div class="graduation-year">平成27年</div>
                     <div class="officer-name">
                         川口 彩実
-                        <span class="new-badge">新任</span>
+                        <span class="new-badge"><span>新任</span></span>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- 事務局 -->
-            <div class="position-section">
-                <div class="position-title">事務局</div>
+            <section class="position-section">
+                <div class="section-head">
+                    <span class="section-en">Secretariat</span>
+                    <h2>事務局</h2>
+                </div>
                 <div class="officer-card">
                     <div class="position-label">部長</div>
                     <div class="graduation-year">-</div>
@@ -386,15 +641,28 @@
                     <div class="graduation-year">平成15年</div>
                     <div class="officer-name">上野 文也</div>
                 </div>
-            </div>
-        </div>
+            </section>
 
-        <div class="legend">
-            <div class="legend-content">
-                <span class="new-badge">新任</span>
-                <span>= 役職変更・新任者</span>
+            <div class="legend">
+                <span class="new-badge"><span>新任</span></span>= 役職変更・新任者
             </div>
         </div>
     </div>
+
+    <!-- 写真バンド -->
+    <div class="photo-band">
+        <div class="band-bg"></div>
+        <div class="band-inner">
+            <span class="en">To the Next Generation</span>
+            <p>伝統を、次の世代へ。</p>
+        </div>
+    </div>
+
+    <!-- フッター -->
+    <footer>
+        <div class="footer-title">享栄高等学校硬式野球部 OB・OG会</div>
+        <p>&copy; 2025 Kyoei High School Baseball Club Alumni Association. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
