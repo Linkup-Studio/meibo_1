@@ -161,15 +161,22 @@
         }
 
         .org-change {
-            display: inline-block;
+            display: inline-flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 4px 20px;
             margin-top: 28px;
-            padding: 11px 34px;
+            padding: 11px 30px;
             border: 1px solid var(--navy);
             color: var(--navy);
             background: var(--white);
             font-size: 0.95rem;
             font-weight: 700;
             letter-spacing: 0.22em;
+        }
+
+        .org-change span {
+            white-space: nowrap;
         }
 
         /* セクション */
@@ -410,6 +417,17 @@
                 line-height: 1.9;
             }
 
+            .intro p br {
+                display: none;
+            }
+
+            .org-change {
+                font-size: 0.88rem;
+                letter-spacing: 0.12em;
+                padding: 10px 18px;
+                gap: 2px 14px;
+            }
+
             .position-section {
                 padding: 30px 22px 18px;
                 margin-bottom: 32px;
@@ -491,7 +509,7 @@
             <div class="intro">
                 <p>享栄高等学校硬式野球部OB・OG会の令和7・8年度役員名簿をご案内いたします。<br>
                 各役職者の卒業年と共に、現体制をご確認ください。</p>
-                <div class="org-change">組織変更　令和8年（2026年）9月1日付</div>
+                <div class="org-change"><span>組織変更</span><span>令和8年（2026年）9月1日付</span></div>
             </div>
 
             <!-- 名誉顧問・顧問 -->
